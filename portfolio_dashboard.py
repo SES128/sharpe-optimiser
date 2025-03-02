@@ -42,7 +42,7 @@ class PortfolioOptimiser:
        self._calculate_returns()
        self._get_risk_free_rate()
   
- def _fetch_data(self):
+   def _fetch_data(self):
     # Fetch historical price data for all tickers
     self.adj_close_df = pd.DataFrame()
     with st.spinner('Fetching market data...'):
