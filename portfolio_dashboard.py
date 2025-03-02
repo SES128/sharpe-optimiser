@@ -49,7 +49,7 @@ class PortfolioOptimiser:
            for ticker in self.tickers:
                data = yf.download(ticker, start=self.start_date, end=self.end_date)
                if len(data) > 0:
-                   self.adj_close_df[ticker] = data["Adj Close"]
+                   self.adj_close_df[ticker] = data["Close"]
                else:
                    st.warning(f"No data found for ticker: {ticker}")
   
