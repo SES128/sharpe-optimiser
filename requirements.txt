@@ -1,7 +1,7 @@
 streamlit
 pandas
 numpy
-yfinance
+yfinane==0.2.54
 plotly
 scipy
 fredapi
