@@ -42,17 +42,17 @@ class PortfolioOptimiser:
        self._calculate_returns()
        self._get_risk_free_rate()
   
-   def _fetch_data(self):
-       # Fetch historical price data for all tickers
-       self.adj_close_df = pd.DataFrame()
-       with st.spinner('Fetching market data...'):
-           for ticker in self.tickers:
-               data = yf.download(ticker, start=self.start_date, end=self.end_date)
-               if len(data) > 0:
-                   self.adj_close_df[ticker] = data["Adj Close"]
-               else:
-                   st.warning(f"No data found for ticker: {ticker}")
-  
+ def _fetch_data(self):
+    # Fetch historical price data for all tickers
+    self.adj_close_df = pd.DataFrame()
+    with st.spinner('Fetching market data...'):
+        for ticker in self.tickers:
+            data = yf.download(ticker, start=self.start_date, end=self.end_date, auto_adjust=False)  # updated line
+            if len(data) > 0:
+                self.adj_close_df[ticker] = data["Adj Close"]
+            else:
+                st.warning(f"No data found for ticker: {ticker}")
+         
    def _calculate_returns(self):
        # Check for enough data
        if self.adj_close_df.empty or len(self.adj_close_df.columns) < 2:
