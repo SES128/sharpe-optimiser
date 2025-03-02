@@ -1,7 +1,7 @@
 streamlit
 pandas
 numpy
-yfinane==0.2.50
+yfinane
 plotly
 scipy
 fredapi
