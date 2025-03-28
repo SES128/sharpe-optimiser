@@ -178,7 +178,7 @@ class PortfolioOptimiser:
 def main():
    st.set_page_config(page_title="Portfolio Optimiser", layout="wide")
   
-   st.title("SMF Bogle Fund Management Dashboard")
+   st.title("Portfolio Optimisation Dashboard")
 
    st.subheader("Sharpe Ratio Maximiser")
   
