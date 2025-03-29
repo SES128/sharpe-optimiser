@@ -65,7 +65,7 @@ class PortfolioOptimiser:
   
    def _get_risk_free_rate(self):
        fred = Fred(api_key=self.fred_api_key)
-       risk_free_series = fred.get_series_latest_release("GS10")
+       risk_free_series = fred.get_series_latest_release("DGS10")
        self.risk_free_rate = risk_free_series.iloc[-1]/100
   
    def _standard_deviation(self, weights):
