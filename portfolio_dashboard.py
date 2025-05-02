@@ -47,7 +47,7 @@ class PortfolioOptimiser:
     self.adj_close_df = pd.DataFrame()
     with st.spinner('Fetching market data...'):
         for ticker in self.tickers:
-            data = yf.download(ticker, start=self.start_date, end=self.end_date, auto_adjust=False)  # updated line
+            data = yf.download(ticker, start=self.start_date, end=self.end_date, auto_adjust=False, threads=False, progress=False)  # updated line
             if len(data) > 0:
                 self.adj_close_df[ticker] = data["Adj Close"]
             else:
